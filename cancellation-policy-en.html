@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cancellation Policy - Samha App</title>
+  <title>Privacy & Cancellation Policy - Samha App</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,31 +18,44 @@
     .header-logo { order: 2; }
     .header-nav-zone.header-nav-left { order: 3; }
     
+    /* Show content immediately without delay */
+    .section-inner,
+    .policy-block,
+    .policy-container,
+    .section {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      animation: none !important;
+    }
+    
     /* Policy page styles */
     .policy-container {
       max-width: 800px;
       margin: 0 auto;
+      padding: 0 1.5rem;
     }
     .policy-block {
       background: rgba(255,255,255,0.85);
       border-radius: 1.5rem;
       box-shadow: 0 4px 24px rgba(172,116,116,0.10);
-      padding: 2rem 2rem 1.5rem 2rem;
-      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
     }
     .policy-title {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       font-weight: 700;
       color: var(--color-secondary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
     .policy-title svg {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       fill: var(--color-primary);
+      flex-shrink: 0;
     }
     .policy-list {
       list-style: none;
@@ -51,25 +64,25 @@
     }
     .policy-list li {
       position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.7rem;
+      padding-left: 1.2rem;
+      margin-bottom: 0.6rem;
       color: #7a5a5a;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      line-height: 1.5;
     }
     .policy-list li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0.55em;
-      width: 8px;
-      height: 8px;
+      top: 0.5em;
+      width: 7px;
+      height: 7px;
       background: linear-gradient(135deg, #ac7474 60%, #845c5c 100%);
       border-radius: 50%;
     }
     .policy-note {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       color: #ac7474;
       font-size: 1rem;
       font-weight: 500;
@@ -77,17 +90,67 @@
     .policy-highlight {
       background: rgba(172,116,116,0.08);
       border-radius: 1rem;
-      padding: 1.2rem 1.5rem;
-      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      margin-top: 1.2rem;
       text-align: center;
     }
     .policy-highlight p {
       color: #7a5a5a;
-      font-size: 1rem;
+      font-size: 0.95rem;
       margin: 0;
     }
     .policy-highlight strong {
       color: var(--color-secondary);
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 760px) {
+      .section {
+        padding-block: 1.5rem;
+      }
+      .policy-container {
+        padding: 0 1rem;
+      }
+      .policy-block {
+        padding: 1.2rem;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+      }
+      .section-title {
+        font-size: 1.3rem !important;
+      }
+      .section-subtitle {
+        font-size: 0.85rem !important;
+      }
+      .policy-title {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+      }
+      .policy-title svg {
+        width: 18px;
+        height: 18px;
+      }
+      .policy-list li {
+        font-size: 0.82rem;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+      }
+      .policy-list li::before {
+        width: 5px;
+        height: 5px;
+        top: 0.45em;
+      }
+      .policy-note {
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+      .policy-highlight {
+        padding: 0.8rem 1rem;
+      }
+      .policy-highlight p {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
@@ -122,19 +185,19 @@
             <a href="reviews-en.html" class="nav-chip">Reviews</a>
             <a href="faq-en.html" class="nav-chip">FAQ</a>
             <a href="support-en.html" class="nav-chip">Support</a>
-            <a href="policy-en.html" class="nav-chip is-active">Policies</a>
+            <a href="cancellation-policy-en.html" class="nav-chip is-active">Privacy & Cancellation</a>
           </div>
         </nav>
       </header>
 
       <main>
-        <section id="cancellation-policy" class="section">
+        <section id="cancellation-policy" class="section section-in-view">
           <div class="section-inner">
             <div class="section-tag">
               <span class="section-tag-dot"></span>
               <span>Flexible & Fair</span>
             </div>
-            <h2 class="section-title">Cancellation Policy</h2>
+            <h2 class="section-title">Privacy & Cancellation Policy</h2>
             <p class="section-subtitle">
               We understand that plans change. Here's everything you need to know about cancelling or modifying your booking.
             </p>
@@ -177,6 +240,226 @@
               </div>
             </div>
             <p class="policy-note">Questions about cancellations? Contact our support team anytime.</p>
+          </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy-policy" class="section section-in-view">
+          <div class="section-inner">
+            <div class="section-tag">
+              <span class="section-tag-dot"></span>
+              <span>Protecting Your Data</span>
+            </div>
+            <h2 class="section-title">Privacy Policy</h2>
+            <p class="section-subtitle">Last Updated: February 2026</p>
+            
+            <div class="policy-container">
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  1. Introduction
+                </h3>
+                <ul class="policy-list">
+                  <li>Welcome to Samha ("Samha," "Company," "we," "our," or "us"). This Privacy Policy describes how we collect, use, process, store, disclose, and protect personal data when you access or use the Samha mobile application, website, and related services (collectively, the "Service").</li>
+                  <li>We are committed to safeguarding your privacy and handling your personal data in accordance with the Personal Data Protection Law (PDPL) of the Kingdom of Saudi Arabia, applicable implementing regulations, and international data protection best practices.</li>
+                  <li>By accessing or using the Service, you acknowledge that you have read and understood this Privacy Policy.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  2. Scope of Application
+                </h3>
+                <ul class="policy-list">
+                  <li>This Privacy Policy applies to all users of the Samha application, including customers booking beauty services and any individuals interacting with our platform.</li>
+                  <li>It does not apply to third-party services that may be linked within the app.</li>
+                  <li>We are not responsible for the privacy practices of third parties.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  3. Personal Data We Collect
+                </h3>
+                <p style="font-weight: 600; color: var(--color-secondary); margin-bottom: 0.5rem;">3.1 Information You Provide Directly:</p>
+                <ul class="policy-list">
+                  <li>Full name</li>
+                  <li>Email address</li>
+                  <li>Phone number</li>
+                  <li>Date of birth</li>
+                  <li>Booking details and appointment history</li>
+                  <li>Beauty preferences</li>
+                  <li>Optional profile photos</li>
+                  <li>Messages, reviews, and customer support communications</li>
+                </ul>
+                <p style="font-weight: 600; color: var(--color-secondary); margin: 1rem 0 0.5rem;">3.2 Payment Information:</p>
+                <ul class="policy-list">
+                  <li>Payments are processed securely through certified third-party payment providers (including EDFAPAY).</li>
+                  <li>We do not store or process full credit or debit card numbers on our servers.</li>
+                </ul>
+                <p style="font-weight: 600; color: var(--color-secondary); margin: 1rem 0 0.5rem;">3.3 Automatically Collected Information:</p>
+                <ul class="policy-list">
+                  <li>Device type and operating system</li>
+                  <li>Unique device identifiers</li>
+                  <li>IP address</li>
+                  <li>Log data (access times, pages viewed, actions taken)</li>
+                  <li>App usage analytics</li>
+                  <li>Approximate or precise location data (only with your explicit permission)</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  4. Legal Basis for Processing
+                </h3>
+                <ul class="policy-list">
+                  <li>Your consent</li>
+                  <li>Performance of a contract (e.g., booking services)</li>
+                  <li>Compliance with legal obligations</li>
+                  <li>Legitimate business interests (such as fraud prevention and service improvement), provided such interests do not override your rights</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  5. How We Use Your Information
+                </h3>
+                <ul class="policy-list">
+                  <li>Create and manage user accounts</li>
+                  <li>Facilitate bookings between users and salons</li>
+                  <li>Process transactions</li>
+                  <li>Send booking confirmations, reminders, and service updates</li>
+                  <li>Provide customer support</li>
+                  <li>Personalize user experience</li>
+                  <li>Detect, prevent, and investigate fraud or misuse</li>
+                  <li>Improve app performance and features</li>
+                  <li>Comply with applicable laws and regulatory requirements</li>
+                </ul>
+                <p style="margin-top: 1rem; color: var(--color-primary); font-weight: 600;">We do not sell, rent, or trade your personal data.</p>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  6. Data Sharing and Disclosure
+                </h3>
+                <ul class="policy-list">
+                  <li><strong>With Partner Salons:</strong> We share necessary booking details with salons to enable appointment fulfillment.</li>
+                  <li><strong>With Service Providers:</strong> We may share information with trusted third-party service providers (payment processors, cloud hosting providers, analytics providers) under contractual confidentiality obligations.</li>
+                  <li><strong>Legal Requirements:</strong> We may disclose personal data if required by Saudi laws, court orders, or government authorities.</li>
+                  <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, restructuring, or asset sale, personal data may be transferred as part of the transaction.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  7. Data Security
+                </h3>
+                <ul class="policy-list">
+                  <li>Encryption of data in transit (HTTPS/TLS)</li>
+                  <li>Encryption of sensitive data at rest</li>
+                  <li>Role-based access controls</li>
+                  <li>Secure authentication mechanisms</li>
+                  <li>Regular system monitoring and updates</li>
+                  <li>Hosting within secure data centers compliant with Saudi regulatory requirements</li>
+                </ul>
+                <p style="margin-top: 1rem; color: #7a5a5a;">Despite our efforts, no system can guarantee absolute security.</p>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                  8. Data Retention
+                </h3>
+                <ul class="policy-list">
+                  <li>We retain personal data only for as long as necessary to provide the Service, fulfill contractual obligations, and comply with legal requirements (typically 5–10 years for financial records under Saudi law).</li>
+                  <li>When data is no longer required, it will be securely deleted or anonymized.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  9. Your Rights Under PDPL
+                </h3>
+                <ul class="policy-list">
+                  <li>Access your personal data</li>
+                  <li>Request correction of inaccurate or incomplete data</li>
+                  <li>Request deletion of your data</li>
+                  <li>Restrict or object to processing</li>
+                  <li>Withdraw consent at any time</li>
+                  <li>Request data portability where applicable</li>
+                </ul>
+                <p style="margin-top: 1rem; color: var(--color-secondary);">To exercise your rights, please contact: <a href="mailto:privacy@samhaapp.com" style="color: var(--color-primary);">privacy@samhaapp.com</a></p>
+                <p style="color: #7a5a5a;">We may request identity verification before processing certain requests.</p>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  10. International Data Transfers
+                </h3>
+                <ul class="policy-list">
+                  <li>Personal data is primarily stored within the Kingdom of Saudi Arabia.</li>
+                  <li>If data is transferred outside Saudi Arabia, such transfers will comply with PDPL requirements and include appropriate legal safeguards to ensure adequate protection.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  11. Children's Privacy
+                </h3>
+                <ul class="policy-list">
+                  <li>The Service is not directed to individuals under the age of 18.</li>
+                  <li>We do not knowingly collect personal data from minors.</li>
+                  <li>If we become aware that a minor has provided personal data, we will take steps to delete such information promptly.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  12. Cookies and Tracking Technologies
+                </h3>
+                <ul class="policy-list">
+                  <li>We may use cookies and similar tracking technologies to maintain session functionality, remember user preferences, analyze usage trends, and improve Service performance.</li>
+                  <li>Users may manage certain tracking preferences through device or browser settings.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  13. Changes to This Privacy Policy
+                </h3>
+                <ul class="policy-list">
+                  <li>We reserve the right to update this Privacy Policy at any time.</li>
+                  <li>If material changes are made, we will notify users through the application or other appropriate means.</li>
+                  <li>Continued use of the Service after updates constitutes acceptance of the revised policy.</li>
+                </ul>
+              </div>
+
+              <div class="policy-block">
+                <h3 class="policy-title">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                  14. Contact Information
+                </h3>
+                <ul class="policy-list">
+                  <li>Email: <a href="mailto:privacy@samhaapp.com" style="color: var(--color-primary);">privacy@samhaapp.com</a></li>
+                  <li>Address: Riyadh, Kingdom of Saudi Arabia</li>
+                </ul>
+              </div>
+
+              <div class="policy-highlight">
+                <p><strong>Your privacy matters to us.</strong> We are committed to protecting your personal data with the highest security standards. For any questions, contact us anytime.</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>

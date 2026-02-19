@@ -328,6 +328,19 @@ a {
   justify-content: flex-end;
 }
 
+/* Desktop: keep the two policy chips (4th & 5th) together on the same row */
+@media (min-width: 761px) {
+  .header-nav-left .nav-chip:nth-child(n+4) {
+    order: 5;
+  }
+  .header-nav-left::after {
+    content: '';
+    flex-basis: 100%;
+    height: 0;
+    order: 4;
+  }
+}
+
 .header-logo {
   flex: 0 0 auto;
   display: flex;

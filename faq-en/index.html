@@ -10,10 +10,10 @@
   <meta property="og:image" content="https://f.top4top.io/p_3737xe49q1.jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://samhaapp.com/reviews-en.html">
+  <meta property="og:url" content="https://samhaapp.com/faq-en/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-  <title>Reviews - Samha App</title>
+  <title>FAQ - Samha App</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,17 +21,80 @@
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
   <style>
     /* LTR adjustments for English */
     .header-nav-zone.header-nav-right { order: 1; }
     .header-logo { order: 2; }
     .header-nav-zone.header-nav-left { order: 3; }
     
-    /* Reviews LTR text alignment */
-    .review-info { text-align: left; }
-    .review-card-grid .review-text { text-align: left; }
-    .review-card-grid .review-badge { align-self: flex-end; }
+    /* FAQ accordion styles */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.7);
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(172,116,116,0.07);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover {
+      box-shadow: 0 4px 20px rgba(172,116,116,0.13);
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-secondary);
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 1.08rem;
+      gap: 1rem;
+    }
+    .faq-question:focus { outline: none; }
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ac7474 60%, #845c5c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+    }
+    .faq-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-icon svg {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.25s;
+      padding: 0 1.5rem;
+      color: #7a5a5a;
+      font-size: 1rem;
+      background: rgba(172,116,116,0.03);
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 1rem 1.5rem 1.25rem 1.5rem;
+    }
   </style>
 </head>
 <body>
@@ -51,103 +114,80 @@
       <header class="site-header">
         <nav class="header-nav">
           <div class="header-nav-zone header-nav-right">
-            <a href="index-en.html" class="nav-chip">Home</a>
-            <a href="about-en.html" class="nav-chip">About</a>
-            <a href="features-en.html" class="nav-chip">Features</a>
-            <a href="salons-en.html" class="nav-chip">For Salons</a>
+            <a href="/en/" class="nav-chip">Home</a>
+            <a href="/about-en/" class="nav-chip">About</a>
+            <a href="/features-en/" class="nav-chip">Features</a>
+            <a href="/salons-en/" class="nav-chip">For Salons</a>
           </div>
           <div class="header-logo">
-            <a href="index-en.html">
+            <a href="/en/">
               <img src="https://c.top4top.io/p_3669839yh1.png" alt="Samha App Logo" />
             </a>
           </div>
           <div class="header-nav-zone header-nav-left">
-            <a href="reviews-en.html" class="nav-chip is-active">Reviews</a>
-            <a href="faq-en.html" class="nav-chip">FAQ</a>
-            <a href="support-en.html" class="nav-chip">Support</a>
-            <a href="cancellation-policy-en.html" class="nav-chip">Privacy & Cancellation</a>
+            <a href="/reviews-en/" class="nav-chip">Reviews</a>
+            <a href="/faq-en/" class="nav-chip is-active">FAQ</a>
+            <a href="/support-en/" class="nav-chip">Support</a>
+            <a href="/cancellation-policy-en/" class="nav-chip">Privacy & Cancellation</a>
           </div>
         </nav>
       </header>
 
       <main>
-        <section id="reviews" class="section">
+        <section id="faq" class="section">
           <div class="section-inner">
-            <div class="reviews-main-frame">
-              <div class="section-tag">
-                <span class="section-tag-dot"></span>
-                <span>Real Experiences from Our Clients</span>
+            <div class="section-tag">
+              <span class="section-tag-dot"></span>
+              <span>Have Questions? We Have Answers</span>
+            </div>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">
+              Find quick answers to common questions about using Samha, bookings, and more.
+            </p>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>How do I create an account on the app?</span>
+                  <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+                </button>
+                <div class="faq-answer">
+                  You can register using your phone number or email, and follow the simple steps within the app to get started in less than a minute.
+                </div>
               </div>
-              <h2 class="section-title">Customer Reviews</h2>
-              <p class="section-subtitle">Genuine stories from Samha users</p>
-              <div class="reviews-grid-wrapper">
-                <div class="reviews-grid">
-                  <article class="review-card-grid" style="--delay: 0s;">
-                    <div class="review-card-header">
-                      <div class="review-avatar">R</div>
-                      <div class="review-info">
-                        <div class="review-name">Reem Al-Shammari</div>
-                        <div class="review-rating">★★★★★ · Weekly booking</div>
-                      </div>
-                    </div>
-                    <div class="review-text">First time I booked a salon without calls or hassle — the experience was absolutely delightful.</div>
-                    <div class="review-badge">Happy Client</div>
-                  </article>
-                  <article class="review-card-grid" style="--delay: 0.08s;">
-                    <div class="review-card-header">
-                      <div class="review-avatar">S</div>
-                      <div class="review-info">
-                        <div class="review-name">Sarah Al-Mutairi</div>
-                        <div class="review-rating">★★★★★ · Jeddah</div>
-                      </div>
-                    </div>
-                    <div class="review-text">The app interface is soft and feminine — I genuinely feel it was designed for us.</div>
-                    <div class="review-badge">Premium Experience</div>
-                  </article>
-                  <article class="review-card-grid" style="--delay: 0.16s;">
-                    <div class="review-card-header">
-                      <div class="review-avatar">L</div>
-                      <div class="review-info">
-                        <div class="review-name">Lama Al-Harbi</div>
-                        <div class="review-rating">★★★★☆ · Riyadh</div>
-                      </div>
-                    </div>
-                    <div class="review-text">I book for important events and receive reminders at just the right time before my appointment.</div>
-                    <div class="review-badge">Smart Reminders</div>
-                  </article>
-                  <article class="review-card-grid" style="--delay: 0.24s;">
-                    <div class="review-card-header">
-                      <div class="review-avatar">N</div>
-                      <div class="review-info">
-                        <div class="review-name">Noura Al-Enezi</div>
-                        <div class="review-rating">★★★★★ · Favorite salon</div>
-                      </div>
-                    </div>
-                    <div class="review-text">I love that everything is clear before booking — price, duration, and services.</div>
-                    <div class="review-badge">Full Transparency</div>
-                  </article>
-                  <article class="review-card-grid" style="--delay: 0.32s;">
-                    <div class="review-card-header">
-                      <div class="review-avatar">F</div>
-                      <div class="review-info">
-                        <div class="review-name">Fatima Al-Zahrani</div>
-                        <div class="review-rating">★★★★★ · New user</div>
-                      </div>
-                    </div>
-                    <div class="review-text">Tried the app for the first time and was amazed by how smooth the signup and booking was.</div>
-                    <div class="review-badge">Perfect First Impression</div>
-                  </article>
-                  <article class="review-card-grid" style="--delay: 0.40s;">
-                    <div class="review-card-header">
-                      <div class="review-avatar">M</div>
-                      <div class="review-info">
-                        <div class="review-name">Mona Al-Qahtani</div>
-                        <div class="review-rating">★★★★★ · Dammam</div>
-                      </div>
-                    </div>
-                    <div class="review-text">This app made my life so much easier — booking is now fun and quick.</div>
-                    <div class="review-badge">Comfort & Ease</div>
-                  </article>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>Can I cancel or reschedule my booking?</span>
+                  <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+                </button>
+                <div class="faq-answer">
+                  Yes, you can modify or cancel your booking from within the app at any time, subject to the salon's cancellation policy.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>What payment methods are available?</span>
+                  <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+                </button>
+                <div class="faq-answer">
+                  Samha supports various secure payment options including credit/debit cards, Mada, Apple Pay, and more.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>Is the app available across all regions?</span>
+                  <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+                </button>
+                <div class="faq-answer">
+                  We're currently available in major cities across Saudi Arabia, with continuous expansion to new areas.
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>How can I contact customer support?</span>
+                  <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span>
+                </button>
+                <div class="faq-answer">
+                  You can reach out through the in-app support chat, or via email and social media — we're always here to help.
                 </div>
               </div>
             </div>
@@ -173,7 +213,7 @@
             </div>
           </div>
           
-          <a href="reviews.html" class="footer-lang-switch" title="التحويل إلى العربية">
+          <a href="/faq/" class="footer-lang-switch" title="التحويل إلى العربية">
             <span>تغيير اللغة • العربية</span>
           </a>
           
@@ -193,7 +233,7 @@
             <a href="mailto:info@samhaapp.com" class="social-pill" title="Email">
               <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
             </a>
-            <a href="support-en.html" class="social-pill" title="Support" aria-label="Support">
+            <a href="/support-en/" class="social-pill" title="Support" aria-label="Support">
               <svg viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
             </a>
           </div>
@@ -206,6 +246,18 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // FAQ accordion functionality
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+        this.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -10,10 +10,10 @@
   <meta property="og:image" content="https://f.top4top.io/p_3737xe49q1.jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://samhaapp.com/policy-en.html">
+  <meta property="og:url" content="https://samhaapp.com/salons-en/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-  <title>Policies - Samha App</title>
+  <title>For Salons - Samha App</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,77 +21,39 @@
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
   <style>
     /* LTR adjustments for English */
     .header-nav-zone.header-nav-right { order: 1; }
     .header-logo { order: 2; }
     .header-nav-zone.header-nav-left { order: 3; }
     
-    /* Policy page styles */
-    .policy-container {
-      max-width: 800px;
-      margin: 0 auto;
+    /* Salons landing page styles */
+    .salons-hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
     }
-    .policy-block {
-      background: rgba(255,255,255,0.85);
-      border-radius: 1.5rem;
-      box-shadow: 0 4px 24px rgba(172,116,116,0.10);
-      padding: 2rem 2rem 1.5rem 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .policy-title {
-      font-size: 1.2rem;
+    .salons-hero-title {
+      font-size: 2.2rem;
       font-weight: 700;
       color: var(--color-secondary);
       margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      line-height: 1.3;
     }
-    .policy-title svg {
-      width: 24px;
-      height: 24px;
-      fill: var(--color-primary);
-    }
-    .policy-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .policy-list li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.7rem;
+    .salons-hero-lead {
+      font-size: 1.15rem;
       color: #7a5a5a;
-      font-size: 1rem;
-      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
     }
-    .policy-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 8px;
-      height: 8px;
-      background: linear-gradient(135deg, #ac7474 60%, #845c5c 100%);
-      border-radius: 50%;
-    }
-    .policy-note {
-      text-align: center;
-      margin-top: 2rem;
-      color: #ac7474;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .policy-links {
+    .salons-cta-row {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
       flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
-    .policy-links a {
+    .salons-cta {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -99,15 +61,71 @@
       color: #fff;
       font-weight: 600;
       border-radius: 2rem;
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
+      padding: 0.9rem 2rem;
+      font-size: 1.08rem;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(172,116,116,0.10);
+      box-shadow: 0 2px 12px rgba(172,116,116,0.13);
       transition: box-shadow 0.2s, transform 0.2s;
     }
-    .policy-links a:hover {
-      box-shadow: 0 4px 16px rgba(172,116,116,0.18);
-      transform: scale(1.04);
+    .salons-cta:hover {
+      box-shadow: 0 6px 24px rgba(172,116,116,0.22);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .salons-cta-ghost {
+      background: rgba(255,255,255,0.85);
+      color: var(--color-secondary);
+      border: 2px solid var(--color-primary);
+    }
+    .salons-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 2.5rem auto 0 auto;
+    }
+    .salons-benefit {
+      background: rgba(255,255,255,0.8);
+      border-radius: 1.2rem;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(172,116,116,0.08);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .salons-benefit:hover {
+      box-shadow: 0 6px 20px rgba(172,116,116,0.15);
+      transform: translateY(-3px);
+    }
+    .salons-benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ac7474 60%, #845c5c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.9rem auto;
+    }
+    .salons-benefit-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
+    .salons-benefit-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: 0.4rem;
+    }
+    .salons-benefit-desc {
+      color: #7a5a5a;
+      font-size: 0.98rem;
+    }
+    .salons-note {
+      text-align: center;
+      margin-top: 2.5rem;
+      color: #ac7474;
+      font-size: 1.05rem;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -128,75 +146,80 @@
       <header class="site-header">
         <nav class="header-nav">
           <div class="header-nav-zone header-nav-right">
-            <a href="index-en.html" class="nav-chip">Home</a>
-            <a href="about-en.html" class="nav-chip">About</a>
-            <a href="features-en.html" class="nav-chip">Features</a>
-            <a href="salons-en.html" class="nav-chip">For Salons</a>
+            <a href="/en/" class="nav-chip">Home</a>
+            <a href="/about-en/" class="nav-chip">About</a>
+            <a href="/features-en/" class="nav-chip">Features</a>
+            <a href="/salons-en/" class="nav-chip is-active">For Salons</a>
           </div>
           <div class="header-logo">
-            <a href="index-en.html">
+            <a href="/en/">
               <img src="https://c.top4top.io/p_3669839yh1.png" alt="Samha App Logo" />
             </a>
           </div>
           <div class="header-nav-zone header-nav-left">
-            <a href="reviews-en.html" class="nav-chip">Reviews</a>
-            <a href="faq-en.html" class="nav-chip">FAQ</a>
-            <a href="support-en.html" class="nav-chip">Support</a>
-            <a href="cancellation-policy-en.html" class="nav-chip is-active">Privacy & Cancellation</a>
+            <a href="/reviews-en/" class="nav-chip">Reviews</a>
+            <a href="/faq-en/" class="nav-chip">FAQ</a>
+            <a href="/support-en/" class="nav-chip">Support</a>
+            <a href="/cancellation-policy-en/" class="nav-chip">Privacy & Cancellation</a>
           </div>
         </nav>
       </header>
 
       <main>
-        <section id="policy" class="section">
+        <section id="salons" class="section">
           <div class="section-inner">
-            <div class="section-tag">
-              <span class="section-tag-dot"></span>
-              <span>Clear & Fair Terms</span>
-            </div>
-            <h2 class="section-title">App Policies</h2>
-            <p class="section-subtitle">
-              We believe in transparency. Here you'll find our policies on cancellations, modifications, and refunds.
-            </p>
-            <div class="policy-container">
-              <div class="policy-block">
-                <h3 class="policy-title">
-                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                  Cancellation Policy
-                </h3>
-                <ul class="policy-list">
-                  <li>Bookings can be cancelled free of charge up to 24 hours before the appointment.</li>
-                  <li>Cancellations made less than 24 hours before may be subject to a fee per the salon's policy.</li>
-                  <li>No-shows without prior notice may result in partial or full charge.</li>
-                </ul>
+            <div class="salons-hero">
+              <div class="section-tag" style="justify-content:center;">
+                <span class="section-tag-dot"></span>
+                <span>Grow Your Salon with Samha</span>
               </div>
-              <div class="policy-block">
-                <h3 class="policy-title">
+              <h1 class="salons-hero-title">Join the Premium Beauty Network</h1>
+              <p class="salons-hero-lead">
+                Become part of Samha and connect with thousands of clients looking for quality beauty experiences.
+                Effortless booking management, real-time updates, and a beautiful showcase for your services.
+              </p>
+              <div class="salons-cta-row">
+                <a href="https://wa.me/966575457450?text=I'd%20like%20to%20register%20my%20salon%20with%20Samha" target="_blank" class="salons-cta">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+                  Register via WhatsApp
+                </a>
+                <a href="mailto:salons@samhaapp.com" class="salons-cta salons-cta-ghost">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="#845c5c"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                  Contact via Email
+                </a>
+              </div>
+            </div>
+            <div class="salons-benefits">
+              <div class="salons-benefit">
+                <div class="salons-benefit-icon">
+                  <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                </div>
+                <h3 class="salons-benefit-title">Reach More Clients</h3>
+                <p class="salons-benefit-desc">Get discovered by clients actively searching for premium beauty services.</p>
+              </div>
+              <div class="salons-benefit">
+                <div class="salons-benefit-icon">
                   <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
-                  Modification Policy
-                </h3>
-                <ul class="policy-list">
-                  <li>You can reschedule or modify your booking anytime before the 24-hour window.</li>
-                  <li>Modifications are subject to salon availability.</li>
-                  <li>Changes made within 24 hours may require contacting the salon directly.</li>
-                </ul>
+                </div>
+                <h3 class="salons-benefit-title">Smart Scheduling</h3>
+                <p class="salons-benefit-desc">Manage your appointments with an intuitive calendar and real-time updates.</p>
               </div>
-              <div class="policy-block">
-                <h3 class="policy-title">
-                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                  Refund Policy
-                </h3>
-                <ul class="policy-list">
-                  <li>Refunds for eligible cancellations are processed within 5-7 business days.</li>
-                  <li>Refunds will be credited to the original payment method.</li>
-                  <li>Partial refunds may apply depending on timing and salon terms.</li>
-                </ul>
+              <div class="salons-benefit">
+                <div class="salons-benefit-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <h3 class="salons-benefit-title">Build Your Reputation</h3>
+                <p class="salons-benefit-desc">Collect genuine reviews and showcase your ratings to new clients.</p>
+              </div>
+              <div class="salons-benefit">
+                <div class="salons-benefit-icon">
+                  <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                </div>
+                <h3 class="salons-benefit-title">Secure Payments</h3>
+                <p class="salons-benefit-desc">Receive payments directly with transparent, hassle-free transactions.</p>
               </div>
             </div>
-            <p class="policy-note">For detailed cancellation terms, please visit our dedicated page:</p>
-            <div class="policy-links">
-              <a href="cancellation-policy-en.html">View Cancellation Policy</a>
-            </div>
+            <p class="salons-note">✨ Join today and let your salon shine on Samha!</p>
           </div>
         </section>
       </main>
@@ -219,7 +242,7 @@
             </div>
           </div>
           
-          <a href="cancellation-policy.html" class="footer-lang-switch" title="التحويل إلى العربية">
+          <a href="/salons/" class="footer-lang-switch" title="التحويل إلى العربية">
             <span>تغيير اللغة • العربية</span>
           </a>
           
@@ -239,7 +262,7 @@
             <a href="mailto:info@samhaapp.com" class="social-pill" title="Email">
               <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
             </a>
-            <a href="support-en.html" class="social-pill" title="Support" aria-label="Support">
+            <a href="/support-en/" class="social-pill" title="Support" aria-label="Support">
               <svg viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
             </a>
           </div>
@@ -252,6 +275,6 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

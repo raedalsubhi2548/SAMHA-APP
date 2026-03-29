@@ -1049,12 +1049,12 @@ main {
 }
 
 .banner-arrow {
+  display: none !important;
   width: 32px;
   height: 32px;
   border-radius: 999px;
   border: none;
   background: rgba(240, 216, 224, 0.98);
-  display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 26px rgba(132, 92, 92, 0.45);

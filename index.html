@@ -124,7 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="hero-phone-container">
                   <div class="hero-phone">
                     <div class="hero-phone-inner">
-                      <img src="https://i.top4top.io/p_3737qfc0b1.png" alt="واجهة تطبيق سمحة" />
+                      <img src="https://i.top4top.io/p_3775geh6z1.jpeg" alt="تطبيق سمحة" loading="lazy" style="max-width:100%;height:auto;object-fit:contain;" />
                     </div>
                   </div>
                 </div>
@@ -321,6 +321,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
           </div>
           <p style="font-size: 0.85rem; color: #8b6f6f; margin-top: 0.5rem; text-align: center;">تطبيق سمحة مملوك وتحت إدارة مؤسسة سمحه إيرا – سجل تجاري رقم 7051357239</p>
+          <!-- سطر السجل التجاري - شعار وزارة التجارة + رقم السجل -->
+          <div class="footer-cr">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Logo_Ministry_of_Commerce.svg/400px-Logo_Ministry_of_Commerce.svg.png" alt="وزارة التجارة" class="moc-logo" loading="lazy">
+            <span class="cr-number">سجل تجاري رقم 7051357239</span>
+          </div>
           <div class="footer-copy">
             <span>© جميع الحقوق محفوظة لتطبيق سمحة.</span>
           </div>
@@ -329,15 +334,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- App Download Modal -->
+  <!-- App Download Modal (نافذة اختيار نوع التطبيق) -->
   <div id="appModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;justify-content:center;align-items:center;backdrop-filter:blur(4px);" onclick="if(event.target===this)this.style.display='none'">
     <div style="background:#fff;border-radius:1.5rem;padding:2.5rem 2rem;max-width:380px;width:90%;text-align:center;position:relative;box-shadow:0 8px 32px rgba(172,116,116,0.25);">
       <button onclick="document.getElementById('appModal').style.display='none'" style="position:absolute;top:12px;left:12px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#8b6f6f;line-height:1;">&times;</button>
       <h3 style="font-size:1.3rem;font-weight:700;color:#845c5c;margin-bottom:0.5rem;font-family:'Cairo',sans-serif;">حملي التطبيق</h3>
       <p style="color:#8b6f6f;font-size:0.95rem;margin-bottom:1.5rem;font-family:'Cairo',sans-serif;">اختاري التطبيق المناسب لك</p>
       <div style="display:flex;flex-direction:column;gap:1rem;">
-        <a href="https://apps.apple.com/sa/app/samha-owner/id6760688062?l=ar" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:linear-gradient(135deg,#ac7474 60%,#845c5c 100%);color:#fff;font-weight:600;border-radius:2rem;padding:0.85rem 1.5rem;font-size:1rem;text-decoration:none;font-family:'Cairo',sans-serif;box-shadow:0 2px 8px rgba(172,116,116,0.15);transition:transform 0.2s,box-shadow 0.2s;">تطبيق الصالونات</a>
-        <a href="https://apps.apple.com/sa/app/samha/id6760321732" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:linear-gradient(135deg,#ac7474 60%,#845c5c 100%);color:#fff;font-weight:600;border-radius:2rem;padding:0.85rem 1.5rem;font-size:1rem;text-decoration:none;font-family:'Cairo',sans-serif;box-shadow:0 2px 8px rgba(172,116,116,0.15);transition:transform 0.2s,box-shadow 0.2s;">تطبيق العملاء</a>
+        <button type="button"
+                data-open-store-modal
+                data-store-target="owner"
+                style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:linear-gradient(135deg,#ac7474 60%,#845c5c 100%);color:#fff;font-weight:600;border-radius:2rem;padding:0.85rem 1.5rem;font-size:1rem;border:none;cursor:pointer;font-family:'Cairo',sans-serif;box-shadow:0 2px 8px rgba(172,116,116,0.15);transition:transform 0.2s,box-shadow 0.2s;">تطبيق الصالونات</button>
+        <button type="button"
+                data-open-store-modal
+                data-store-target="customer"
+                style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:linear-gradient(135deg,#ac7474 60%,#845c5c 100%);color:#fff;font-weight:600;border-radius:2rem;padding:0.85rem 1.5rem;font-size:1rem;border:none;cursor:pointer;font-family:'Cairo',sans-serif;box-shadow:0 2px 8px rgba(172,116,116,0.15);transition:transform 0.2s,box-shadow 0.2s;">تطبيق العملاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Store Selection Modal (نافذة اختيار المتجر - App Store / Google Play) -->
+  <div id="storeModal" class="store-modal" role="dialog" aria-modal="true" aria-labelledby="storeModalTitle">
+    <div class="store-modal-card">
+      <button type="button" class="store-modal-close" data-close-store-modal aria-label="إغلاق">&times;</button>
+      <h3 id="storeModalTitle" class="store-modal-title">اختر المتجر</h3>
+      <p class="store-modal-subtitle">حمّل التطبيق من متجرك المفضل</p>
+      <div class="store-modal-buttons">
+        <a class="store-badge" data-store-appstore href="https://apps.apple.com/sa/app/samha/id6760321732" target="_blank" rel="noopener noreferrer" aria-label="App Store">
+          <img src="https://i.top4top.io/p_3737ldpeg1.png" alt="App Store" />
+        </a>
+        <a class="store-badge" data-store-googleplay href="https://play.google.com/store/apps/details?id=com.samha.customer" target="_blank" rel="noopener noreferrer" aria-label="Google Play">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/ar_badge_web_generic.png" alt="Google Play" />
+        </a>
       </div>
     </div>
   </div>

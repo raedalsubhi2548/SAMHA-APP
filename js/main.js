@@ -219,6 +219,59 @@ function setupRoadTimelineAnimation() {
   });
 }
 
+/* ========== نافذة اختيار المتجر (Store-selection modal) ========== */
+// روابط المتاجر معرّفة هنا داخل الكود لمنع أي تلاعب من خلال DOM (XSS-safe)
+const STORE_LINKS = {
+  owner: {
+    appstore: "https://apps.apple.com/sa/app/samha-owner/id6760688062?l=ar",
+    googleplay: "https://play.google.com/store/apps/details?id=com.samha.owner",
+  },
+  customer: {
+    appstore: "https://apps.apple.com/sa/app/samha/id6760321732",
+    googleplay: "https://play.google.com/store/apps/details?id=com.samha.customer",
+  },
+};
+
+function setupStoreModal() {
+  const modal = document.getElementById("storeModal");
+  if (!modal || modal.dataset.bound === "1") return;
+  modal.dataset.bound = "1";
+  const appstoreLink = modal.querySelector("[data-store-appstore]");
+  const playLink = modal.querySelector("[data-store-googleplay]");
+
+  // فتح النافذة بناءً على هوية التطبيق (owner / customer) من الزر
+  document.querySelectorAll("[data-open-store-modal]").forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      const target = trigger.getAttribute("data-store-target");
+      const links = Object.prototype.hasOwnProperty.call(STORE_LINKS, target)
+        ? STORE_LINKS[target]
+        : null;
+      if (!links) return;
+      if (appstoreLink) appstoreLink.setAttribute("href", links.appstore);
+      if (playLink) playLink.setAttribute("href", links.googleplay);
+      // إغلاق النافذة الأولى إن كانت مفتوحة
+      const firstModal = document.getElementById("appModal");
+      if (firstModal) firstModal.style.display = "none";
+      modal.classList.add("is-open");
+    });
+  });
+
+  // الإغلاق بالضغط على × أو خارج البطاقة
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal || event.target.closest("[data-close-store-modal]")) {
+      modal.classList.remove("is-open");
+    }
+  });
+
+  // الإغلاق بمفتاح Escape
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      modal.classList.remove("is-open");
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupNavScroll();
   setupSectionReveal();
@@ -227,4 +280,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFaq();
   setupAutoScrollRow();
   setupRoadTimelineAnimation();
+  setupStoreModal();
 });

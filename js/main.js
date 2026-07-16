@@ -272,6 +272,82 @@ function setupStoreModal() {
   });
 }
 
+function setupMobileNav() {
+  const nav = document.querySelector(".header-nav");
+  const toggle = document.querySelector(".nav-toggle");
+  if (!nav || !toggle) return;
+
+  const getFocusable = () =>
+    Array.from(nav.querySelectorAll("a, button")).filter(
+      el => el.offsetParent !== null || el === toggle
+    );
+
+  const closeNav = (focusToggle) => {
+    nav.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    if (focusToggle) toggle.focus();
+  };
+
+  const openNav = () => {
+    nav.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    const focusable = getFocusable();
+    const firstLink = focusable.find(el => el !== toggle);
+    if (firstLink) firstLink.focus();
+  };
+
+  toggle.addEventListener("click", () => {
+    if (nav.classList.contains("is-open")) {
+      closeNav(false);
+    } else {
+      openNav();
+    }
+  });
+
+  // إغلاق القائمة عند الضغط على أي رابط داخلها
+  nav.querySelectorAll(".nav-chip").forEach(link => {
+    link.addEventListener("click", () => closeNav(false));
+  });
+
+  // إغلاق القائمة عند الضغط خارجها
+  document.addEventListener("click", (event) => {
+    if (!nav.classList.contains("is-open")) return;
+    if (!nav.contains(event.target)) closeNav(false);
+  });
+
+  // إغلاق القائمة بمفتاح Escape + حصر التنقل (focus trap) داخل القائمة عند فتحها
+  document.addEventListener("keydown", (event) => {
+    if (!nav.classList.contains("is-open")) return;
+
+    if (event.key === "Escape") {
+      closeNav(true);
+      return;
+    }
+
+    if (event.key === "Tab") {
+      const focusable = getFocusable();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  // إغلاق القائمة تلقائيًا عند تكبير الشاشة فوق نقطة التحول للجوال
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768 && nav.classList.contains("is-open")) {
+      closeNav(false);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupNavScroll();
   setupSectionReveal();
@@ -281,4 +357,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAutoScrollRow();
   setupRoadTimelineAnimation();
   setupStoreModal();
+  setupMobileNav();
 });
+

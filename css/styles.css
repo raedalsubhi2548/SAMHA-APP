@@ -3805,3 +3805,142 @@ main {
   .store-modal-card { padding: 1.75rem 1rem 1.5rem; }
   .store-modal-buttons .store-badge img { height: 48px; }
 }
+
+/* ==========================================================================
+   Accessibility: skip link, focus-visible outlines, mobile hamburger nav
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  inset-inline-start: 12px;
+  z-index: 999;
+  background: var(--color-secondary);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-soft);
+  transition: top 0.2s ease-out;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Hamburger toggle button (hidden on desktop, shown < 768px) */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  box-shadow: 0 8px 24px rgba(172, 116, 116, 0.4);
+  flex: 0 0 auto;
+  z-index: 21;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.header-nav.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.header-nav.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.header-nav.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: relative;
+  }
+
+  /* Override the always-visible stacked nav with a collapsible hamburger menu */
+  .header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 24px);
+    max-width: calc(100vw - 24px);
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    order: 2;
+  }
+
+  .header-logo {
+    order: 1;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .header-nav-zone,
+  .header-nav-right,
+  .header-nav-left {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 0.6rem;
+    order: 3;
+  }
+
+  .header-nav.is-open .header-nav-zone {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .header-nav-left {
+    order: 4;
+  }
+
+  .header-nav .nav-chip {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+/* Respect reduced-motion preference site-wide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

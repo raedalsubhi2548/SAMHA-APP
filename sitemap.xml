@@ -1,57 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Arabic Pages -->
   <url>
     <loc>https://samhaapp.com/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/about/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/about-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/features/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/features/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/features-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/salons/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/salons/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/salons-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/reviews/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/reviews/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/reviews-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/faq/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/faq/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/faq-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/support/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/support-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/policy/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/policy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/policy-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/cancellation-policy/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/cancellation-policy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/cancellation-policy-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -59,55 +87,82 @@
   <!-- English Pages -->
   <url>
     <loc>https://samhaapp.com/en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/about-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/about/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/about-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/features-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/features/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/features-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/salons-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/salons/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/salons-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/reviews-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/reviews/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/reviews-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/faq-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/faq/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/faq-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/support-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/support-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/policy-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/policy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/policy-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://samhaapp.com/cancellation-policy-en/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://samhaapp.com/cancellation-policy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://samhaapp.com/cancellation-policy-en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://samhaapp.com/" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
